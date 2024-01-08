@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+    
+
+    body {
+        background: beige !important;	
+    }
+
+    .wrapper {	
+        margin-top: 80px;
+    margin-bottom: 80px;
+    }
+
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1.5px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+    
+</head>
+<body>
+    <div class="body">
+        <div class="wrapper">
+        {% csrf_token %}
+        <h1 style="text-align: justify;">Customer Details</h1>
+        <table id="custdetail">
+            <tr>
+            <th>Customer Name</th>
+            <th>Customer Number</th>
+            <th>Customer Address</th>
+            
+            
+            </tr>
+            {% for x in customer_detail %}
+            <tr>
+               
+                <td>{{x.customer_name}}</td>
+                <td>{{x.customer_number}}</td>
+                <td>{{x.customer_address}}</td>
+                <!-- <td><button type="submit" onclick="getLocation()" class="btn btn-primary">View</button></a></td> -->
+
+            </tr>
+            {% endfor %}
+        </table> 
+       
+    </div>
+    </div>
+    
+</body>
+</html>
